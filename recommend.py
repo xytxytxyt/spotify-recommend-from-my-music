@@ -38,7 +38,7 @@ def main():
     )
     spotify = spotipy.Spotify(auth=token)
 
-    print('querying spotify')
+    print('querying spotify data to start radios from')
     artist_uris = []
     track_uris = []
     for artist in music.keys():
@@ -46,7 +46,7 @@ def main():
         for item in results['artists']['items']:
             artist_uri = item['uri']
             spotify_url = item['external_urls']['spotify']
-            print(artist, artist_uri, spotify_url, f'http://open.spotify.com/app/radio/artist/{artist_uri}', sep=output_separator)
+            print(artist, artist_uri, spotify_url, sep=output_separator)
             artist_uris.append(artist_uri)
 
     print('getting recommendations')
